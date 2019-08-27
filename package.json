@@ -1,0 +1,23 @@
+{
+  "name": "nomadprismagram",
+  "version": "1.0.0",
+  "description": "instagram clone with express prisma react reactnative",
+  "main": "index.js",
+  "repository": "https://github.com/k0603156/nomadprismagram.git",
+  "author": "k0603156 <k0603156@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "dotenv": "^8.1.0",
+    "graphql-yoga": "^1.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
