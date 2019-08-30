@@ -15,7 +15,6 @@ export default {
       console.log(request)
       const loginSecret = generateSecret();
       try {
-        throw Error();
         await sendSecretMail(email, loginSecret);
         await db.updateUser({
           data: {
