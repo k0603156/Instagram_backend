@@ -1,12 +1,9 @@
-import {
-  isAuthenticated
-} from "../../../middlewares";
-
 export default {
   Mutation: {
     addComment: async (_, args, {
       db,
-      request
+      request,
+      isAuthenticated
     }) => {
       isAuthenticated(request)
       const {

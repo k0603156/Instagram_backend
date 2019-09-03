@@ -11,6 +11,9 @@ import schema from "./schema";
 import {
   authenticateJwt
 } from './passport';
+import {
+  isAuthenticated
+} from "./middlewares";
 
 const PORT = process.env.PORT || 8001;
 
@@ -20,7 +23,8 @@ const server = new GraphQLServer({
     request
   }) => ({
     db: prisma,
-    request
+    request,
+    isAuthenticated
   })
 });
 

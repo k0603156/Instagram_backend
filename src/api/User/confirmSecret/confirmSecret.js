@@ -16,6 +16,14 @@ export default {
         email
       });
       if (user.loginSecret === secret) {
+        await db.updateUser({
+          where: {
+            id: user.id
+          },
+          data: {
+            loginSecret: ""
+          }
+        })
         return generateToken(user.id);
       } else {
         throw Error("Wrong email/secret combination");
