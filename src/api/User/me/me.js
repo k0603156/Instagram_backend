@@ -20,7 +20,21 @@ export default {
         posts
       }
     }
+  }, //custom resolver it working on another query
+  User: {
+    fullName: (parent) => {
+      // console.log("Parent:", parent); => Query.user
+      return `${parent.firstName} ${parent.lastName}`;
+    }
   }
+  // User: {
+  //   fullName: (parent, __, {
+  //     request
+  //   }) => {
+  //     // console.log("Parent:", parent); => Query.user
+  //     return 'ssss';
+  //   }
+  // }
 }
 // import {
 //   USER_FRAGMENT
