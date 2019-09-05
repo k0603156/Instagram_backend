@@ -1,16 +1,21 @@
 export default {
   Query: {
     seeUser: async (_, args, {
-      db,
-      request,
-      isAuthenticated
+      db
     }) => {
       const {
         id
       } = args;
-      return db.user({
+      const user = await db.user({
         id
       });
+      const posts = await db.user({
+        id
+      }).posts();
+      return {
+        user,
+        posts
+      };
 
     }
   }

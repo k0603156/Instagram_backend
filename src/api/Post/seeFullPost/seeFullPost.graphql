@@ -1,0 +1,9 @@
+type FullPhost {
+  post: Post!
+  comments: [Comment!]!
+  likeCount: Int!
+}
+
+type Query {
+  seeFullPost(id: String!): FullPhost!
+}

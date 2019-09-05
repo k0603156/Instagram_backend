@@ -56,3 +56,9 @@ type Message {
   to: User!
   chatRoom: ChatRoom!
 }
+# 테이블 외 graphql 모델
+# me / seeUser
+type UserProfile {
+  user: User!
+  posts: [Post!]!
+}
