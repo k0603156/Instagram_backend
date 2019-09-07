@@ -20,12 +20,12 @@ export default {
         posts
       }
     }
-  }, //custom resolver it working on another query
-  User: {
-    fullName: (parent) => {
-      // console.log("Parent:", parent); => Query.user
-      return `${parent.firstName} ${parent.lastName}`;
-    }
+    // }, //custom resolver it working on another query
+    // User: {
+    //   fullName: (parent) => {
+    //     // console.log("Parent:", parent); => Query.user
+    //     return `${parent.firstName} ${parent.lastName}`;
+    //   }
   }
   // User: {
   //   fullName: (parent, __, {
