@@ -17,14 +17,24 @@ export default {
         id
       }).comments().$fragment(COMMENT_FRAGMENT);
       const likeCount = await db.likesConnection({
-        where: {
-          post: {
-            id
+          where: {
+            post: {
+              id
+            }
           }
-        }
-      }).aggregate().count();
+        })
+        .aggregate()
+        .count();
+      const user = await db.post({
+        id
+      }).user();
+      const files = await db.post({
+        id
+      }).files();
       return {
+        user,
         post,
+        files,
         comments,
         likeCount
       }

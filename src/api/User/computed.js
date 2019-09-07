@@ -39,5 +39,29 @@ export default {
       } = parent;
       return user.id === parentId;
     }
+  },
+  Post: {
+    isLiked: async (parent, _, {
+      db,
+      request
+    }) => {
+      const {
+        user
+      } = request;
+      const {
+        id
+      } = parent;
+      return db.$exists.like({
+        AND: [{
+          user: {
+            id: user.id
+          }
+        }, {
+          post: {
+            id
+          }
+        }]
+      })
+    }
   }
 };
