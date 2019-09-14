@@ -4,7 +4,7 @@ import {
 
 export default {
   Query: {
-    seeRooms: async (_, __, {
+    seeChatRooms: async (_, __, {
       db,
       request,
       isAuthenticated

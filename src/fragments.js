@@ -46,9 +46,24 @@ fragment PostParts on Post {
     ${COMMENT_FRAGMENT}
   }
 }`;
+
+export const MESSAGE_FRAGMENT = `
+  id
+  text
+  to {
+    ${USER_FRAGMENT}
+  }
+  from {
+    ${USER_FRAGMENT}
+  }
+`;
+
 export const CHATROOM_FRAGMENT = `fragment RoomParts on ChatRoom {
   id
   participants {
     ${USER_FRAGMENT}
   }
-}`
+  messages {
+    ${MESSAGE_FRAGMENT}
+  }
+}`;

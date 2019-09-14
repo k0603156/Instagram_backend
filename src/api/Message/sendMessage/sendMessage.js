@@ -1,6 +1,6 @@
 import {
   CHATROOM_FRAGMENT
-} from "../../fragments";
+} from "../../../fragments";
 
 export default {
   Mutation: {
@@ -14,12 +14,12 @@ export default {
         user
       } = request;
       const {
-        roomId,
+        chatRoomId,
         message,
         toId
       } = args;
       let room;
-      if (roomId === undefined) {
+      if (chatRoomId === undefined) {
         if (user.id !== toId) {
           room = await db.createChatRoom({
             participants: {
@@ -34,7 +34,7 @@ export default {
 
       } else {
         room = await db.chatRoom({
-          id: roomId
+          id: chatRoomId
         }).$fragment(CHATROOM_FRAGMENT);
       }
       if (!room) {
@@ -52,7 +52,7 @@ export default {
         },
         to: {
           connect: {
-            id: roomId ? getTo.id : toId
+            id: chatRoomId ? getTo.id : toId
           }
         },
         chatRoom: {
