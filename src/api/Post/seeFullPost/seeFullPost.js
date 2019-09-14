@@ -1,5 +1,6 @@
 import {
-  COMMENT_FRAGMENT
+  COMMENT_FRAGMENT,
+  FULL_POST_FRAGMENT
 } from "../../../fragments";
 
 export default {
@@ -10,34 +11,9 @@ export default {
       const {
         id
       } = args;
-      const post = await db.post({
+      return db.post({
         id
-      });
-      const comments = await db.post({
-        id
-      }).comments().$fragment(COMMENT_FRAGMENT);
-      const likeCount = await db.likesConnection({
-          where: {
-            post: {
-              id
-            }
-          }
-        })
-        .aggregate()
-        .count();
-      const user = await db.post({
-        id
-      }).user();
-      const files = await db.post({
-        id
-      }).files();
-      return {
-        user,
-        post,
-        files,
-        comments,
-        likeCount
-      }
+      }).$fragment(FULL_POST_FRAGMENT);
     }
   }
-}
+};

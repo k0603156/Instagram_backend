@@ -12,11 +12,43 @@
 //   }
 // }`;
 //me.js
+export const USER_FRAGMENT = `
+  id
+  userName
+  avatar
+`;
 
-export const COMMENT_FRAGMENT = `fragment CommentParts on Comment {
+export const COMMENT_FRAGMENT = `
   id
   text
   user {
-    userName
+    ${USER_FRAGMENT}
+  }
+`;
+
+export const FILE_FRAGMENT = `
+  id
+  url
+`;
+
+export const FULL_POST_FRAGMENT = `
+fragment PostParts on Post {
+  id
+  location
+  caption
+  user {
+    ${USER_FRAGMENT}
+  }
+  files {
+    ${FILE_FRAGMENT}
+  }
+  comments {
+    ${COMMENT_FRAGMENT}
+  }
+}`;
+export const CHATROOM_FRAGMENT = `fragment RoomParts on ChatRoom {
+  id
+  participants {
+    ${USER_FRAGMENT}
   }
 }`

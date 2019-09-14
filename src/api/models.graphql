@@ -1,5 +1,6 @@
 type User {
   id: ID!
+  avatar: String
   email: String!
   userName: String!
   firstName: String!
@@ -15,6 +16,8 @@ type User {
   loginSecret: String
   isFollowing: Boolean!
   isSelf: Boolean!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type Post {
@@ -26,12 +29,17 @@ type Post {
   likes: [Like!]!
   comments: [Comment!]!
   isLiked: Boolean!
+  likeCount: Int!
+  createdAt: String!
+  updatedAt: String!
 }
 
 type Like {
   id: ID!
   user: User!
   post: Post!
+  createdAt: String
+  updatedAt: String
 }
 
 type Comment {
@@ -39,6 +47,8 @@ type Comment {
   text: String!
   user: User!
   post: Post!
+  createdAt: String
+  updatedAt: String
 }
 
 type File {
@@ -51,6 +61,8 @@ type ChatRoom {
   id: ID!
   participants: [User!]!
   messages: [Message!]!
+  createdAt: String
+  updatedAt: String
 }
 
 type Message {
@@ -59,10 +71,14 @@ type Message {
   from: User!
   to: User!
   chatRoom: ChatRoom!
+  createdAt: String
+  updatedAt: String
 }
 # 테이블 외 graphql 모델
 # me / seeUser
 type UserProfile {
   user: User!
   posts: [Post!]!
+  createdAt: String
+  updatedAt: String
 }

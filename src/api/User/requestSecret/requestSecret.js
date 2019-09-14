@@ -24,6 +24,7 @@ export default {
             email: email
           }
         });
+        // 예외가 발생해도 이메일은 이미 보내짐 수정필요
         return true;
       } catch {
         return false;
