@@ -30,6 +30,21 @@ export default {
           id: parent.id
         }
       }
-    }).aggregate().count()
+    }).aggregate().count(),
+    files: (parent, _, {
+      db
+    }) => db.post({
+      id: parent.id
+    }).files(),
+    comments: (parent, _, {
+      db
+    }) => db.post({
+      id: parent.id
+    }).comments(),
+    user: (parent, _, {
+      db
+    }) => db.post({
+      id: parent.id
+    }).user(),
   }
 };

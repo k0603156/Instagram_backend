@@ -9,6 +9,7 @@ export default {
       request,
       isAuthenticated
     }) => {
+      isAuthenticated(request);
       const {
         id
       } = args;

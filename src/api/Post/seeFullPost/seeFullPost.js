@@ -1,8 +1,3 @@
-import {
-  COMMENT_FRAGMENT,
-  FULL_POST_FRAGMENT
-} from "../../../fragments";
-
 export default {
   Query: {
     seeFullPost: async (_, args, {
@@ -13,7 +8,7 @@ export default {
       } = args;
       return db.post({
         id
-      }).$fragment(FULL_POST_FRAGMENT);
+      });
     }
   }
 };
