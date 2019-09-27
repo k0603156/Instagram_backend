@@ -25,9 +25,9 @@ export default {
           }
         ]
       };
+
       try {
         const existingLike = await db.$exists.like(filterOptions);
-        console.log(existingLike);
         if (existingLike) {
           //TODO Unlike
           await db.deleteManyLikes(filterOptions)

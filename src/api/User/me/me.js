@@ -9,16 +9,9 @@ export default {
       const {
         user
       } = request;
-      const userProfile = await db.user({
+      return await db.user({
         id: user.id
-      });
-      const posts = await db.user({
-        id: user.id
-      }).posts();
-      return {
-        user: userProfile,
-        posts
-      }
+      })
     }
     // }, //custom resolver it working on another query
     // User: {

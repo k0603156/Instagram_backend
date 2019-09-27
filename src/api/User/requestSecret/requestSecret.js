@@ -12,7 +12,6 @@ export default {
       const {
         email
       } = args;
-      console.log(request)
       const loginSecret = generateSecret();
       try {
         await sendSecretMail(email, loginSecret);

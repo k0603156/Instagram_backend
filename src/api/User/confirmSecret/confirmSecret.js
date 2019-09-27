@@ -9,8 +9,8 @@ export default {
       request
     }) => {
       const {
-        email,
-        secret
+        secret,
+        email
       } = args;
       const user = await db.user({
         email

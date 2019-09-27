@@ -6,18 +6,26 @@ export default {
       const {
         email,
         userName,
-        firstName = "",
-        lastName = "",
-        bio = ""
+        firstName,
+        lastName
       } = args;
-      const user = await db.createUser({
+      const exists = await db.$exists.user({
+        OR: [{
+          username
+        }, {
+          email
+        }]
+      });
+      if (exists) {
+        throw Error("This userName is already taken");
+      }
+      await db.createUser({
         email,
         userName,
         firstName,
-        lastName,
-        bio
+        lastName
       });
-      return user;
+      return true;
     }
   }
 };
