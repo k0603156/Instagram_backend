@@ -88,7 +88,7 @@ export default {
       db
       .usersConnection({
         where: {
-          following_none: {
+          followings_some: {
             id
           }
         }
