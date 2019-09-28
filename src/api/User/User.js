@@ -50,8 +50,10 @@ export default {
 
     postsCount: ({
         id
+      }, _, {
+        db
       }) =>
-      prisma
+      db
       .postsConnection({
         where: {
           user: {
@@ -64,8 +66,10 @@ export default {
 
     followingsCount: ({
         id
+      }, _, {
+        db
       }) =>
-      prisma
+      db
       .usersConnection({
         where: {
           followers_some: {
@@ -78,8 +82,10 @@ export default {
 
     followersCount: ({
         id
+      }, _, {
+        db
       }) =>
-      prisma
+      db
       .usersConnection({
         where: {
           following_none: {

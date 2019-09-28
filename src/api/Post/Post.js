@@ -31,6 +31,15 @@ export default {
         }
       }
     }).aggregate().count(),
+    commentCount: (parent, _, {
+      db
+    }) => db.commentsConnection({
+      where: {
+        post: {
+          id: parent.id
+        }
+      }
+    }).aggregate().count(),
     files: (parent, _, {
       db
     }) => db.post({

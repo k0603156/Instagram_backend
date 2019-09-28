@@ -4,19 +4,11 @@ export default {
       db
     }) => {
       const {
-        id
+        userName
       } = args;
-      const user = await db.user({
-        id
+      return db.user({
+        userName
       });
-      const posts = await db.user({
-        id
-      }).posts();
-      return {
-        user,
-        posts
-      };
-
     }
   }
 }
