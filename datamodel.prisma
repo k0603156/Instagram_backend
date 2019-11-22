@@ -1,6 +1,6 @@
 type User {
   id: ID! @id
-  avatar: String @default(value:"https://freeicons.io/laravel/public/uploads/icons/png/8575147831553750379-128.png")
+  avatar: String @default(value:"https://s3.us-east-2.amazonaws.com/upload-icon/uploads/icons/png/8954758561551942278-128.png")
   email: String! @unique
   userName: String! @unique
   firstName: String! @default(value: "")
