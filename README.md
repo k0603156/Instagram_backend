@@ -1,2 +1,3 @@
-# nomadprismagram
-instagram clone with express prisma react reactnative
+# InstagramClone Backend
+
+Instagram clone with express prisma
