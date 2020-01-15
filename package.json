@@ -4,7 +4,11 @@
   "description": "instagram clone with express prisma react reactnative",
   "main": "index.js",
   "repository": "https://github.com/k0603156/nomadprismagram.git",
-  "author": "k0603156 <k0603156@gmail.com>",
+  "author": {
+    "name": "YongkukKim",
+    "email": "syntax-err@kakao.com",
+    "url": "https://github.com/k0603156/Instagram_backend"
+  },
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.5.5",

@@ -1,3 +1,11 @@
-# InstagramClone Backend
+#### ProjectName
 
-Instagram clone with express prisma
+`InstagramClone Backend`
+
+#### Definition
+
+`Instagram clone Frontend`
+
+#### Stack
+
+`express` `passport` `graphql` `prisma`
