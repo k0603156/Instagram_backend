@@ -1,5 +1,5 @@
 {
-  "name": "nomadprismagram",
+  "name": "intagram-backend",
   "version": "1.0.0",
   "description": "instagram clone with express prisma react reactnative",
   "main": "index.js",
