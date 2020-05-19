@@ -43,6 +43,7 @@ server.start(
       try {
         url = await ngrok.connect(port);
         console.log(`Server running with ngrok ${url}`);
+        console.table({ endpoint, subscriptions, playground });
       } catch (e) {
         return logger.error(e);
       }
